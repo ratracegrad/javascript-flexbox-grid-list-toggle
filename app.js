@@ -1,20 +1,13 @@
 const gridBtn = document.getElementById('gridBtn');
 const listBtn = document.getElementById('listBtn');
 
-gridBtn.addEventListener('click', clickGrid);
-listBtn.addEventListener('click', clickList);
+gridBtn.addEventListener('click', clickButton);
+listBtn.addEventListener('click', clickButton);
 
-function clickGrid(e) {
+function clickButton(event) {
 	e.preventDefault();
-	updateClass("grid");
-}
-
-function clickList(e) {
-	e.preventDefault();
-	updateClass("list");
-}
-
-function updateClass(newStyle) {
+	let newStyle = event.target.id;
+	newStyle = newStyle.replace('Btn', '');
 	const element = document.getElementById("card-wrapper");
   element.classList.remove("grid");
 	element.classList.remove("list");
